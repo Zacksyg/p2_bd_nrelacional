@@ -41,7 +41,6 @@
         {% endfor %}
     </table>
 
-    <!-- Formulário de atualização -->
     {% if funcionario_para_atualizar %}
     <h2>Atualizar Funcionário</h2>
     <form action="{{ url_for('atualizar_funcionario', id_funcionario=id_funcionario) }}" method="post">
