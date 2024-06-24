@@ -6,5 +6,5 @@ urlpatterns = [
     path('home/', views.pagina_inicial, name='pagina_inicial'),
     path('cadastro/', views.cadastro, name='cadastro'),
     path('login/', views.login, name='login'),
-    path('logout/', auth_views.LogoutView.as_view(next_page='pagina_inicial'), name='logout'),  # Redireciona para a página inicial após logout
+    path('logout/', auth_views.LogoutView.as_view(next_page='pagina_inicial'), name='logout'),
 ]
