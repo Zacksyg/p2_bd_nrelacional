@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .form-container form {
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: calc(100% - 12px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #fc7b03;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Cadastre-se Abaixo</h2>
+        <form action="{% url 'cadastro' %}" method="POST">
+            {% csrf_token %}
+            {{ form.username.errors }}
+            <input type="text" placeholder="Username..." name="{{ form.username.name }}" value="{{ form.username.value }}">
+            <br>
+            {{ form.email.errors }}
+            <input type="email" placeholder="Email..." name="{{ form.email.name }}" value="{{ form.email.value }}">
+            <br>
+            {{ form.password1.errors }}
+            <input type="password" placeholder="Senha..." name="{{ form.password1.name }}">
+            <br>
+            {{ form.password2.errors }}
+            <input type="password" placeholder="Confirme a senha..." name="{{ form.password2.name }}">
+            <br>
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+</body>
+</html>

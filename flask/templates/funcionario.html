@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_funcionario.css') }}">
+    <title>Cadastro de Funcionário</title>
+</head>
+<body>
+    <h1>Cadastro de Funcionário</h1>
+    <form action="{{ url_for('funcionario') }}" method="post">
+        <label for="primeiro_nome">Primeiro Nome:</label>
+        <input type="text" name="primeiro_nome" required>
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" name="sobrenome" required>
+        <label for="data_admissao">Data de Admissão:</label>
+        <input type="date" name="data_admissao" required>
+        <label for="status_funcionario">Status do Funcionário:</label>
+        <input type="checkbox" name="status_funcionario" value="1" id="ativo" checked>
+        <label for="ativo">Ativo</label>
+        <input type="checkbox" name="status_funcionario" value="0" id="inativo">
+        <label for="inativo">Inativo</label>
+        <br>
+        <input type="submit" value="Adicionar Funcionário">
+    </form>
+</body>
+</html>
